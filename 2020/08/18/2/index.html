@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Perl in bioinformatics | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 提取序列利用substr函数进行序列提取。 example： 123my $my_seq &#x3D; &quot;ATCGAAA&quot;;my $my_exact_seq &#x3D; substr($my_seq,0,3);print $my_exact_seq;  输出结果为： 1ATC  输入substr函数的三个参数，第一个参数为序列 ，第二个参数为起始位点，第三个参数表示向右取多少个碱基">
+  <meta name="description" content="2 已知基因名提取基因序列两个文件，gene_name.txt为基因名文件，gene_seq.fa为基因序列文件  gene_name.txt  gene1gene2gene3   gene_seq.fa  &gt;gene1ATGAGCGAGCTAACTGACTAGCA&gt;gene2ATGAGCGAGCTAACTGACTAGCA&gt;gene3ATGAGCGAGCTAACTGACTAGCA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Perl in bioinformatics">
-<meta property="og:url" content="http://yoursite.com/2020/08/18/1/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/08/18/2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1 提取序列利用substr函数进行序列提取。 example： 123my $my_seq &#x3D; &quot;ATCGAAA&quot;;my $my_exact_seq &#x3D; substr($my_seq,0,3);print $my_exact_seq;  输出结果为： 1ATC  输入substr函数的三个参数，第一个参数为序列 ，第二个参数为起始位点，第三个参数表示向右取多少个碱基">
+<meta property="og:description" content="2 已知基因名提取基因序列两个文件，gene_name.txt为基因名文件，gene_seq.fa为基因序列文件  gene_name.txt  gene1gene2gene3   gene_seq.fa  &gt;gene1ATGAGCGAGCTAACTGACTAGCA&gt;gene2ATGAGCGAGCTAACTGACTAGCA&gt;gene3ATGAGCGAGCTAACTGACTAGCA">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-18T03:45:59.000Z">
-<meta property="article:modified_time" content="2020-08-18T05:18:20.232Z">
+<meta property="article:published_time" content="2020-08-18T11:45:59.000Z">
+<meta property="article:modified_time" content="2020-08-18T16:50:57.157Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,7 +154,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -166,22 +166,31 @@
   
 
         
-        <a href="/2020/08/18/1/" class="archive-article-date">
-  	<time datetime="2020-08-18T03:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
+        <a href="/2020/08/18/2/" class="archive-article-date">
+  	<time datetime="2020-08-18T11:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-提取序列"><a href="#1-提取序列" class="headerlink" title="1 提取序列"></a>1 提取序列</h1><p>利用substr函数进行序列提取。</p>
-<p>example：</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> $my_seq = <span class="string">&quot;ATCGAAA&quot;</span>;</span><br><span class="line"><span class="keyword">my</span> $my_exact_seq = <span class="keyword">substr</span>($my_seq,<span class="number">0</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">print</span> $my_exact_seq;</span><br></pre></td></tr></table></figure>
+        <h1 id="2-已知基因名提取基因序列"><a href="#2-已知基因名提取基因序列" class="headerlink" title="2 已知基因名提取基因序列"></a>2 已知基因名提取基因序列</h1><p>两个文件，gene_name.txt为基因名文件，gene_seq.fa为基因序列文件</p>
+<hr>
+<p>gene_name.txt</p>
+<blockquote>
+<p>gene1<br>gene2<br>gene3</p>
+</blockquote>
+<hr>
+<p>gene_seq.fa</p>
+<blockquote>
+<p>&gt;gene1<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene2<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene3<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene4<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene5<br>ATGAGCGAGCTA<br>ACTGACTAGCA</p>
+</blockquote>
+<hr>
+<p>perl script：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/perl</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> warnings;</span><br><span class="line"><span class="keyword">use</span> strict;</span><br><span class="line"></span><br><span class="line"><span class="comment">#将基因名读入散列%gene_name</span></span><br><span class="line"><span class="keyword">open</span> IN,<span class="string">&quot;gene_name.txt&quot;</span>;</span><br><span class="line"><span class="keyword">my</span> %gene_name = ();</span><br><span class="line"><span class="keyword">while</span> (&lt;IN&gt;)&#123;</span><br><span class="line">    <span class="keyword">chomp</span>;</span><br><span class="line">    <span class="keyword">my</span> @name = <span class="keyword">split</span><span class="regexp">/\s+/</span>;</span><br><span class="line">    $gene_name&#123;$name[<span class="number">0</span>]&#125; = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">close</span> IN;</span><br><span class="line"></span><br><span class="line"><span class="comment">#对于fa格式文件，将记录分隔符设置为“&gt;”,使每次输入记录为一个完整的基因名+序列</span></span><br><span class="line"><span class="keyword">local</span> $/ = <span class="string">&quot;&gt;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#将基因序列文件读入，执行条件语句，如果基因名在%gene_name中有记录，则输出该基因序列</span></span><br><span class="line"><span class="keyword">open</span> IN,<span class="string">&quot;gene_seq.fa&quot;</span>;</span><br><span class="line"><span class="keyword">open</span> OUT,<span class="string">&quot;&gt;gene_name_seq.fa&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (&lt;IN&gt;)&#123;</span><br><span class="line">    <span class="keyword">s</span>/&gt;<span class="regexp">//</span>;<span class="comment">#记录分隔符设置为“&gt;”时，“&gt;”则在记录的尾部，需要去除，输出时添加在最前端</span></span><br><span class="line">    <span class="keyword">my</span> @name = <span class="keyword">split</span><span class="regexp">/\s+/</span>;</span><br><span class="line">    <span class="keyword">print</span> OUT <span class="string">&quot;&gt;$_&quot;</span> <span class="keyword">if</span> <span class="keyword">exists</span> $gene_name&#123;$a[<span class="number">0</span>]&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">close</span> IN;</span><br><span class="line"><span class="keyword">close</span> OUT;</span><br></pre></td></tr></table></figure>
 
-<p>输出结果为：</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ATC</span><br></pre></td></tr></table></figure>
+<hr>
 
-<h2 id="输入substr函数的三个参数，第一个参数为序列-，第二个参数为起始位点，第三个参数表示向右取多少个碱基"><a href="#输入substr函数的三个参数，第一个参数为序列-，第二个参数为起始位点，第三个参数表示向右取多少个碱基" class="headerlink" title="输入substr函数的三个参数，第一个参数为序列 ，第二个参数为起始位点，第三个参数表示向右取多少个碱基"></a>输入substr函数的三个参数，第一个参数为序列 ，第二个参数为起始位点，第三个参数表示向右取多少个碱基</h2>
       
 
       
@@ -260,7 +269,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/18/1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/18/2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,15 +283,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/18/2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Perl in bioinformatics
-        
-      </div>
-    </a>
   
+    <a href="/2020/08/18/1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Perl in bioinformatics</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

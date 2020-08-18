@@ -152,6 +152,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/18/2/">Perl in bioinformatics</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/18/2/" class="archive-article-date">
+  	<time datetime="2020-08-18T11:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="2-已知基因名提取基因序列"><a href="#2-已知基因名提取基因序列" class="headerlink" title="2 已知基因名提取基因序列"></a>2 已知基因名提取基因序列</h1><p>两个文件，gene_name.txt为基因名文件，gene_seq.fa为基因序列文件</p>
+<hr>
+<p>gene_name.txt</p>
+<blockquote>
+<p>gene1<br>gene2<br>gene3</p>
+</blockquote>
+<hr>
+<p>gene_seq.fa</p>
+<blockquote>
+<p>&gt;gene1<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene2<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene3<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene4<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene5<br>ATGAGCGAGCTA<br>ACTGACTAGCA</p>
+</blockquote>
+<hr>
+<p>perl script：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/perl</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> warnings;</span><br><span class="line"><span class="keyword">use</span> strict;</span><br><span class="line"></span><br><span class="line"><span class="comment">#将基因名读入散列%gene_name</span></span><br><span class="line"><span class="keyword">open</span> IN,<span class="string">&quot;gene_name.txt&quot;</span>;</span><br><span class="line"><span class="keyword">my</span> %gene_name = ();</span><br><span class="line"><span class="keyword">while</span> (&lt;IN&gt;)&#123;</span><br><span class="line">    <span class="keyword">chomp</span>;</span><br><span class="line">    <span class="keyword">my</span> @name = <span class="keyword">split</span><span class="regexp">/\s+/</span>;</span><br><span class="line">    $gene_name&#123;$name[<span class="number">0</span>]&#125; = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">close</span> IN;</span><br><span class="line"></span><br><span class="line"><span class="comment">#对于fa格式文件，将记录分隔符设置为“&gt;”,使每次输入记录为一个完整的基因名+序列</span></span><br><span class="line"><span class="keyword">local</span> $/ = <span class="string">&quot;&gt;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#将基因序列文件读入，执行条件语句，如果基因名在%gene_name中有记录，则输出该基因序列</span></span><br><span class="line"><span class="keyword">open</span> IN,<span class="string">&quot;gene_seq.fa&quot;</span>;</span><br><span class="line"><span class="keyword">open</span> OUT,<span class="string">&quot;&gt;gene_name_seq.fa&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (&lt;IN&gt;)&#123;</span><br><span class="line">    <span class="keyword">s</span>/&gt;<span class="regexp">//</span>;<span class="comment">#记录分隔符设置为“&gt;”时，“&gt;”则在记录的尾部，需要去除，输出时添加在最前端</span></span><br><span class="line">    <span class="keyword">my</span> @name = <span class="keyword">split</span><span class="regexp">/\s+/</span>;</span><br><span class="line">    <span class="keyword">print</span> OUT <span class="string">&quot;&gt;$_&quot;</span> <span class="keyword">if</span> <span class="keyword">exists</span> $gene_name&#123;$a[<span class="number">0</span>]&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">close</span> IN;</span><br><span class="line"><span class="keyword">close</span> OUT;</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/18/2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
