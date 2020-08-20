@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>3 利用primer3设计引物，并使输出指定的格式 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="输入文件需要整理成primer3特有的格式  inputfile_of_primer3.txt 12345678910111213PRIMER_SEQUENCE_ID&#x3D;1SEQUENCE&#x3D;CAGCTCTCTACTCGTCAAATTACATAAGAGTAATGACAAAATAAAGGACAAGACCCACAATTTATTTGATTCCTAAGCTTCCCAAGCAAACAGAGT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3 利用primer3设计引物，并使输出指定的格式">
+<meta property="og:url" content="http://yoursite.com/2020/08/20/3/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="输入文件需要整理成primer3特有的格式  inputfile_of_primer3.txt 12345678910111213PRIMER_SEQUENCE_ID&#x3D;1SEQUENCE&#x3D;CAGCTCTCTACTCGTCAAATTACATAAGAGTAATGACAAAATAAAGGACAAGACCCACAATTTATTTGATTCCTAAGCTTCCCAAGCAAACAGAGT">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-20T11:45:59.000Z">
+<meta property="article:modified_time" content="2020-08-20T22:07:51.638Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Perl in bioinformatics">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -150,16 +155,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/20/3/">3 利用primer3设计引物，并使输出指定的格式</a>
+    <h1 class="article-title" itemprop="name">
+      3 利用primer3设计引物，并使输出指定的格式
     </h1>
   
 
@@ -207,16 +210,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/20/3/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/20/3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/18/2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2 已知基因名提取基因序列</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -236,177 +298,14 @@
 
 
 
-
   
-    <article id="post-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/18/2/">2 已知基因名提取基因序列</a>
-    </h1>
   
 
-        
-        <a href="/2020/08/18/2/" class="archive-article-date">
-  	<time datetime="2020-08-18T11:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>两个文件，gene_name.txt为基因名文件，gene_seq.fa为基因序列文件</p>
-<hr>
-<p>gene_name.txt</p>
-<blockquote>
-<p>gene1<br>gene2<br>gene3</p>
-</blockquote>
-<hr>
-<p>gene_seq.fa</p>
-<blockquote>
-<p>&gt;gene1<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene2<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene3<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene4<br>ATGAGCGAGCTA<br>ACTGACTAGCA<br>&gt;gene5<br>ATGAGCGAGCTA<br>ACTGACTAGCA</p>
-</blockquote>
-<hr>
-<p>perl script：</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/perl</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> warnings;</span><br><span class="line"><span class="keyword">use</span> strict;</span><br><span class="line"></span><br><span class="line"><span class="comment">#将基因名读入散列%gene_name</span></span><br><span class="line"><span class="keyword">open</span> IN,<span class="string">&quot;gene_name.txt&quot;</span>;</span><br><span class="line"><span class="keyword">my</span> %gene_name = ();</span><br><span class="line"><span class="keyword">while</span> (&lt;IN&gt;)&#123;</span><br><span class="line">    <span class="keyword">chomp</span>;</span><br><span class="line">    <span class="keyword">my</span> @name = <span class="keyword">split</span><span class="regexp">/\s+/</span>;</span><br><span class="line">    $gene_name&#123;$name[<span class="number">0</span>]&#125; = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">close</span> IN;</span><br><span class="line"></span><br><span class="line"><span class="comment">#对于fa格式文件，将记录分隔符设置为“&gt;”,使每次输入记录为一个完整的基因名+序列</span></span><br><span class="line"><span class="keyword">local</span> $/ = <span class="string">&quot;&gt;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#将基因序列文件读入，执行条件语句，如果基因名在%gene_name中有记录，则输出该基因序列</span></span><br><span class="line"><span class="keyword">open</span> IN,<span class="string">&quot;gene_seq.fa&quot;</span>;</span><br><span class="line"><span class="keyword">open</span> OUT,<span class="string">&quot;&gt;gene_name_seq.fa&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (&lt;IN&gt;)&#123;</span><br><span class="line">    <span class="keyword">s</span>/&gt;<span class="regexp">//</span>;<span class="comment">#记录分隔符设置为“&gt;”时，“&gt;”则在记录的尾部，需要去除，输出时添加在最前端</span></span><br><span class="line">    <span class="keyword">my</span> @name = <span class="keyword">split</span><span class="regexp">/\s+/</span>;</span><br><span class="line">    <span class="keyword">print</span> OUT <span class="string">&quot;&gt;$_&quot;</span> <span class="keyword">if</span> <span class="keyword">exists</span> $gene_name&#123;$a[<span class="number">0</span>]&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">close</span> IN;</span><br><span class="line"><span class="keyword">close</span> OUT;</span><br></pre></td></tr></table></figure>
-
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Perl in bioinformatics</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/18/2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/18/1/">1 提取序列</a>
-    </h1>
   
 
-        
-        <a href="/2020/08/18/1/" class="archive-article-date">
-  	<time datetime="2020-08-18T03:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>利用substr函数进行序列提取。</p>
-<p>example：</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> $my_seq = <span class="string">&quot;ATCGAAA&quot;</span>;</span><br><span class="line"><span class="keyword">my</span> $my_exact_seq = <span class="keyword">substr</span>($my_seq,<span class="number">0</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">print</span> $my_exact_seq;</span><br></pre></td></tr></table></figure>
-
-<p>输出结果为：</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ATC</span><br></pre></td></tr></table></figure>
-
-<h2 id="输入substr函数的三个参数，第一个参数为序列-，第二个参数为起始位点，第三个参数表示向右取多少个碱基"><a href="#输入substr函数的三个参数，第一个参数为序列-，第二个参数为起始位点，第三个参数表示向右取多少个碱基" class="headerlink" title="输入substr函数的三个参数，第一个参数为序列 ，第二个参数为起始位点，第三个参数表示向右取多少个碱基"></a>输入substr函数的三个参数，第一个参数为序列 ，第二个参数为起始位点，第三个参数表示向右取多少个碱基</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Perl in bioinformatics</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/18/1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -429,8 +328,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
